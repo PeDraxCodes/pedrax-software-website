@@ -34,20 +34,20 @@
         <div class="hidden md:flex">Anfragen</div>
         <!--Mobile Menu Button-->
         <button
-          class="pointer relative block h-6 w-6 cursor-pointer focus:outline-none md:hidden"
+          class="pointer relative block h-6 w-6 cursor-pointer focus:outline-none md:hidden overflow-hidden"
           id="menu-btn"
         >
-          <span
-            class="absolute top-0 left-0 h-[2px] w-6 rounded-xl bg-black"
+          <span id="line1"
+            class="absolute top-0 left-0 h-[2px] w-6  rounded-xl bg-black transition duration-300 ease-in-out"
           ></span>
-          <span
-            class="absolute top-0 left-0 h-[2px] w-6 translate-y-2 rounded-xl bg-black"
+          <span id="line2"
+            class="absolute top-0 left-0 h-[2px] w-4 translate-y-2 rounded-xl bg-black transition duration-300 ease-in-out"
           ></span>
-          <span
-            class="absolute top-0 left-0 h-[2px] w-6 translate-y-4 rounded-xl bg-black"
+          <span id="line3"
+            class="absolute top-0 left-0 h-[2px] w-5  translate-y-4 rounded-xl bg-black transition duration-300 ease-in-out"
           ></span>
         </button>
-      </div>
+      </div> 
       <!--Mobile Menu-->
       <div class="md:hidden">
         <div
@@ -66,28 +66,28 @@
       >
         <div>
           <h1
-            class="md:col-span-2 pt-16 font-serif text-5xl font-bold md:text-8xl"
+            class="pt-16 font-serif text-5xl font-bold md:col-span-2 md:text-8xl"
           >
             Liedplan Creator
           </h1>
-          <h1 class="md:row-start-2 pt-10 font-serif text-2xl font-semibold">
+          <h1 class="pt-10 font-serif text-2xl font-semibold md:row-start-2">
             Software für Kirchenmusiker
           </h1>
         </div>
         <div
-          class="relative md:col-start-2 md:row-span-3 md:row-start-2 overflow-hidden"
+          class="relative overflow-hidden md:col-start-2 md:row-span-3 md:row-start-2"
         >
           <img
             src="./assets/formular.png"
             alt=""
-            class="mt-3 md:max-h-[1100px] md:max-w-[1100px] rounded-2xl"
+            class="mt-3 rounded-2xl md:max-h-[1100px] md:max-w-[1100px]"
           />
           <img
             src="./assets/liedplan-produkt.jpg"
             class="absolute top-0 right-0 origin-top-right scale-50 rounded-l-3xl shadow-2xl"
           />
         </div>
-        <div class="md:row-start-2 pt-10 text-center text-2xl font-semibold">
+        <div class="pt-10 text-center text-2xl font-semibold md:row-start-2">
           Erstellen Sie im Handumdrehen Liedpläne für katholische Gottesdienste
         </div>
         <button
@@ -114,11 +114,11 @@
           <div class="pt-4 px-6 pb-2">
             <span
               class="mr-2 mb-2 inline-block rounded-full bg-gray-200 py-1 px-3 text-sm font-semibold text-gray-700"
-            >Student</span
+              >Student</span
             >
             <span
               class="mr-2 mb-2 inline-block rounded-full bg-gray-200 py-1 px-3 text-sm font-semibold text-gray-700"
-            >Programmierer</span
+              >Programmierer</span
             >
           </div>
         </div>
@@ -139,11 +139,11 @@
           <div class="pt-4 px-6 pb-2">
             <span
               class="mr-2 mb-2 inline-block rounded-full bg-gray-200 py-1 px-3 text-sm font-semibold text-gray-700"
-            >Student</span
+              >Student</span
             >
             <span
               class="mr-2 mb-2 inline-block rounded-full bg-gray-200 py-1 px-3 text-sm font-semibold text-gray-700"
-            >Programmierer</span
+              >Programmierer</span
             >
           </div>
         </div>

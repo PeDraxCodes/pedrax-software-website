@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@theme {
+  /*
+    Define default colors for the input component
+    */
+  --color-background: #000000;
+}

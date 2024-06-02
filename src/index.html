@@ -1,16 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PeDrax Software - In Arbeit</title>
-  <link href="./styles/app.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-<div class="text-center p-10 bg-white shadow-md rounded-lg">
-  <h1 class="text-2xl mb-4 text-green-500">Bald verfügbar...</h1>
-  <p class="mb-2">Diese Seite befindet sich derzeit in Arbeit.</p>
-  <p>Schauen Sie bald wieder vorbei!</p>
-</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PeDrax Software</title>
+    <link href="./styles/app.css" rel="stylesheet" />
+    <script src="./scripts/scroll.js" defer></script>
+    <script src="./scripts/buttons.js" defer></script>
+  </head>
+  <body>
+    <svg class="absolute" style="width: 100%; height: 100%">
+      <line
+        x1="0"
+        y1="90%"
+        x2="90%"
+        y2="0"
+        style="stroke: rgb(44, 44, 44); stroke-width: 1"
+      />
+    </svg>
+    <!--Navbar-->
+    <header
+      id="colorDiv"
+      class="container fixed z-50 mx-auto w-full bg-transparent px-10 transition duration-300 ease-in-out"
+    >
+      <div class="flex h-16 items-center justify-between">
+        <h1 class="text-xl font-bold text-green-600">Pedrax Software</h1>
+        <!--Menu Items-->
+        <nav class="hidden gap-10 space-x-6 md:flex" id="navColor">
+          <a href="#">Über</a>
+          <a href="#">Produkte</a>
+          <a href="#">Kontakt</a>
+        </nav>
+        <div class="hidden md:flex">Anfragen</div>
+        <!--Mobile Menu Button-->
+        <button
+          class="pointer relative block h-6 w-6 cursor-pointer focus:outline-none md:hidden"
+          id="menu-btn"
+        >
+          <span
+            class="absolute top-0 left-0 h-[2px] w-6 rounded-xl bg-black"
+          ></span>
+          <span
+            class="absolute top-0 left-0 h-[2px] w-6 translate-y-2 rounded-xl bg-black"
+          ></span>
+          <span
+            class="absolute top-0 left-0 h-[2px] w-6 translate-y-4 rounded-xl bg-black"
+          ></span>
+        </button>
+      </div>
+      <!--Mobile Menu-->
+      <div class="md:hidden">
+        <div
+          id="menu"
+          class="absolute right-6 left-6 mt-1 flex flex-col items-center space-y-6 self-end rounded bg-zinc-100 py-8 font-bold opacity-0 drop-shadow-md transition-opacity duration-100 ease-in sm:w-auto sm:self-center"
+        >
+          <a href="#">Über</a>
+          <a href="#">Produkte</a>
+          <a href="#">Kontakt</a>
+        </div>
+      </div>
+    </header>
+    <main class="container relative items-center pt-10 px-10 md:pt-28">
+      <section
+        class="grid gap-10 md:relative md:grid-flow-col md:grid-cols-2 md:grid-rows-4"
+      >
+        <div>
+          <h1
+            class="md:col-span-2 pt-16 font-serif text-5xl font-bold md:text-8xl"
+          >
+            Liedplan Creator
+          </h1>
+          <h1 class="md:row-start-2 pt-10 font-serif text-2xl font-semibold">
+            Software für Kirchenmusiker
+          </h1>
+        </div>
+        <div
+          class="relative md:col-start-2 md:row-span-3 md:row-start-2 overflow-hidden"
+        >
+          <img
+            src="./assets/formular.png"
+            alt=""
+            class="mt-3 md:max-h-[1100px] md:max-w-[1100px] rounded-2xl"
+          />
+          <img
+            src="./assets/liedplan-produkt.jpg"
+            class="absolute top-0 right-0 origin-top-right scale-50 rounded-l-3xl shadow-2xl"
+          />
+        </div>
+        <div class="md:row-start-2 pt-10 text-center text-2xl font-semibold">
+          Erstellen Sie im Handumdrehen Liedpläne für katholische Gottesdienste
+        </div>
+        <button
+          class="max-sm: rounded-full bg-emerald-600 py-2 px-4 font-bold text-white hover:bg-emerald-700"
+        >
+          mehr Informationen
+        </button>
+      </section>
+
+    </main>
+  </body>
 </html>

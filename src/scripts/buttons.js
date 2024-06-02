@@ -17,7 +17,6 @@ btn.addEventListener("click", function () {
     line3.classList.add("translate-y-4");
     line3.classList.add("w-5");
     line3.classList.remove("w-6");
-
     menuOpen = false;
   } else {
     // add classes if menu is opend

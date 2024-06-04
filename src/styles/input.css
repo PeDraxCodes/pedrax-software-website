@@ -4,5 +4,16 @@
   /*
     Define default colors for the input component
     */
-  --color-background: #000000;
+  --color-background: #fefced;
+
+  /* ttkbootstrap colors */
+  --color-primary: #79553d;
+  --color-secondary: #848279;
+  --color-success: #62773c;
+  --color-info: #4d4ba3;
+  --color-warning: #f37c2e;
+  --color-danger: #d9534f;
+  --color-light: #eee6d0;
+  --color-dark: #4e3318;
+  --color-bg: #fefced;
 }

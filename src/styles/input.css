@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /*
@@ -16,4 +16,13 @@
   --color-light: #eee6d0;
   --color-dark: #4e3318;
   --color-bg: #fefced;
+
+  /*
+    Define default site margins and paddings
+  */
+  --padding-site: 2.5rem;
+  --padding-sitemd: 7rem;
+
+  --margin-site: 2.5rem;
+  --margin-sitemd: 7rem;
 }

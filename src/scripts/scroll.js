@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   /**
    * Function to change the color of the navbar when scrolling
    */
-  window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', () => {
     const colorDiv = document.getElementById('colorDiv');
     const navDiv = document.getElementById('navColor');
 

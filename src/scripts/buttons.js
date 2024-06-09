@@ -5,7 +5,7 @@ const line2 = document.getElementById('line2');
 const line3 = document.getElementById('line3');
 
 let menuOpen = false;
-btn.addEventListener('click', function () {
+btn.addEventListener('click', () => {
   menu.classList.toggle('opacity-100');
   line1.classList.toggle('-rotate-45');
   line1.classList.toggle('translate-y-2');

@@ -205,6 +205,119 @@
         </div>
       </section>
     </main>
-    <footer id="footer"></footer>
+    <div id="footer"></div>
+    <div
+      id="darken"
+      class="fixed top-0 left-0 z-10 hidden h-full w-full opacity-0 transition  ease-in-out duration-1000 bg-black/50 "
+    ></div>
+    <div
+      id="user_popup"
+      tabindex="-1"
+      aria-hidden="false"
+      class="fixed top-0 right-0 left-0 z-50  h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-x-hidden overflow-y-auto md:inset-0"
+    >
+      <div class="relative max-h-full w-full max-w-md p-4">
+        <!-- Modal content -->
+        <div class="relative rounded-lg border-gray-600 bg-white shadow-2xl">
+          <!-- Modal header -->
+          <div
+            class="flex items-center justify-between rounded-t border-b border-gray-400 p-4 md:p-5"
+          >
+            <h3 class="text-lg font-semibold text-gray-900">
+              Liedplan Creator anfragen
+            </h3>
+
+            <button
+              type="button"
+              id="close_popup"
+              class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
+            >
+              <svg
+                class="h-3 w-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                />
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+
+            <!-- Modal body -->
+          </div>
+          <div class="p-4 text-gray-900 md:p-5">
+            Tragen Sie hier ihre E-Mail und optional den Namen ein, darauf
+            senden wir Ihnen den Lizenscode inderhalb eines Tages zu.
+          </div>
+          <form class="p-4 md:p-5" id="emailForm" action="php/submit_email.php">
+            <div class="mb-4 grid grid-cols-2 gap-4">
+              <div class="col-span-2">
+                <label
+                  for="email"
+                  class="mb-2 block text-sm font-medium text-gray-900"
+                  >E-Mail *</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  class="focus:ring-primary-600 focus:border-primary-600 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
+                  placeholder="Geben Sie Ihre E-Mail-Adresse ein"
+                  required
+                />
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <label
+                  for="vorname"
+                  class="mb-2 block text-sm font-medium text-gray-900"
+                  >Vorname</label
+                >
+                <input
+                  type="text"
+                  name="vorname"
+                  class="focus:ring-primary-600 focus:border-primary-600 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
+                />
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <label
+                  for="nachname"
+                  class="mb-2 block text-sm font-medium text-gray-900"
+                  >Nachname</label
+                >
+                <input
+                  type="text"
+                  name="nachname"
+                  class="focus:ring-primary-600 focus:border-primary-600 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
+                />
+              </div>
+            </div>
+            <button
+              id="submit_email"
+              type="submit"
+              class="inline-flex items-center rounded-lg bg-blue-700 py-2.5 px-5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none"
+            >
+              Testversion anfordern
+            </button>
+          </form>
+        </div>
+      </div>
+      <script>
+        document.getElementById('close_popup').addEventListener('click', () => {
+          // document.getElementById('darken').classList.add('hidden');
+          document.getElementById('darken').classList.remove('opacity-100');
+          document.getElementById('darken').classList.add('opacity-0');
+          setTimeout(() => {
+          document.getElementById('darken').classList.add('hidden');
+        }, 1000);
+          document.getElementById('user_popup').classList.add('hidden');
+        });
+      </script>
+    </div>
   </body>
 </html>

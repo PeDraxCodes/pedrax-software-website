@@ -12,12 +12,14 @@ if ($conn->connect_error) {
     die("Datenbank-Fehler!");
 }
 
-// Get email from POST request
+// get properties from POST request
 $email = $_POST['email'];
+$vorname = $_POST['vorname'];
+$nachname = $_POST['nachname'];
 
 // Insert into database table. Use prepared statement to prevent SQL injection
-$stmt = $conn->prepare("INSERT INTO user_email (vorname, name, email) VALUES ('test', 'nachname', ?)");
-$stmt->bind_param("s", $email);
+$stmt = $conn->prepare("INSERT INTO user_email (vorname, name, email) VALUES (?, ?, ?)");
+$stmt->bind_param("sss", $vorname, $nachname, $email);
 
 if ($stmt->execute()) {
     echo "E-Mail-Adresse erfolgreich gespeichert.";

@@ -208,13 +208,13 @@
     <div id="footer"></div>
     <div
       id="darken"
-      class="fixed top-0 left-0 z-10 hidden h-full w-full opacity-0 transition  ease-in-out duration-1000 bg-black/50 "
+      class="fixed top-0 left-0 z-10 hidden h-full w-full bg-black/50 opacity-0 transition duration-1000 ease-in-out"
     ></div>
     <div
       id="user_popup"
       tabindex="-1"
       aria-hidden="false"
-      class="fixed top-0 right-0 left-0 z-50  h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-x-hidden overflow-y-auto md:inset-0"
+      class="fixed top-0 right-0 left-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-x-hidden overflow-y-auto md:inset-0"
     >
       <div class="relative max-h-full w-full max-w-md p-4">
         <!-- Modal content -->
@@ -313,8 +313,8 @@
           document.getElementById('darken').classList.remove('opacity-100');
           document.getElementById('darken').classList.add('opacity-0');
           setTimeout(() => {
-          document.getElementById('darken').classList.add('hidden');
-        }, 1000);
+            document.getElementById('darken').classList.add('hidden');
+          }, 1000);
           document.getElementById('user_popup').classList.add('hidden');
         });
       </script>

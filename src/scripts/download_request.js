@@ -32,15 +32,11 @@ emailForm.addEventListener('submit', (event) => {
         submitEmail.innerHTML = 'Fehler!';
       } else {
         submitEmail.innerHTML = 'Setup angefragt!';
-        submitEmail.classList.remove('bg-blue-700');
+        submitEmail.classList.remove('bg-sky-500');
         submitEmail.classList.add('bg-green-500');
         submitEmail.classList.remove('hover:bg-blue-800');
         submitEmail.classList.remove('focus:ring-sky-300');
         sendEmail = true;
-        setTimeout(() => {
-          submitEmail.classList.remove('bg-green-500');
-          submitEmail.classList.add('bg-gray-400');
-        }, 5000);
       }
     });
 });

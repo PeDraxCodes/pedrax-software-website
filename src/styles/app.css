@@ -1174,6 +1174,11 @@
       background-color: var(--color-gray-200, #e5e7eb);
     }
   }
+  .hover\:bg-sky-800 {
+    &:hover {
+      background-color: var(--color-sky-800, #075985);
+    }
+  }
   .hover\:bg-white {
     &:hover {
       background-color: var(--color-white, #fff);

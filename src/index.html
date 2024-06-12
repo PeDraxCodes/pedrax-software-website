@@ -208,7 +208,7 @@
     <div id="footer"></div>
     <div
       id="darken"
-      class="fixed top-0 left-0 z-10 hidden h-full w-full bg-black/50 opacity-0 transition duration-1000 ease-in-out"
+      class="fixed top-0 left-0 z-10 hidden h-full w-full bg-black/50 opacity-0 transition duration-500 ease-in-out"
     ></div>
     <div
       id="user_popup"
@@ -314,7 +314,7 @@
           document.getElementById('darken').classList.add('opacity-0');
           setTimeout(() => {
             document.getElementById('darken').classList.add('hidden');
-          }, 1000);
+          }, 500);
           document.getElementById('user_popup').classList.add('hidden');
         });
       </script>

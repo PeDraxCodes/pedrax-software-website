@@ -21,7 +21,23 @@ $nachname = $_POST['nachname'];
 $stmt = $conn->prepare("INSERT INTO user_email (vorname, name, email) VALUES (?, ?, ?)");
 $stmt->bind_param("sss", $vorname, $nachname, $email);
 
+// prepare WhatsApp message
+$url = getenv('WHATSAPP_URL');
+$date = date('m/d/Y h:i:s a', time());
+$options = [
+    'http' => [
+        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method'  => 'POST',
+        'content' => http_build_query([
+            'message' => "Ein neuer Benutzer hat ein Setup um $date angefragt."
+        ])
+        ]
+        ];
+
+
 if ($stmt->execute()) {
+    $context  = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
     echo "E-Mail-Adresse erfolgreich gespeichert.";
 } else {
     echo "Fehler: " . $stmt->error;

@@ -17,6 +17,13 @@ $email = $_POST['email'];
 $vorname = $_POST['vorname'];
 $nachname = $_POST['nachname'];
 
+if (empty($vorname)) {
+    $vorname = null;
+}
+if (empty($nachname)) {
+    $nachname = null;
+}
+
 // Insert into database table. Use prepared statement to prevent SQL injection
 $stmt = $conn->prepare("INSERT INTO user_email (vorname, name, email) VALUES (?, ?, ?)");
 $stmt->bind_param("sss", $vorname, $nachname, $email);
@@ -36,6 +43,7 @@ $options = [
 
 
 if ($stmt->execute()) {
+    // send WhatsApp message
     $context  = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
     echo "E-Mail-Adresse erfolgreich gespeichert.";

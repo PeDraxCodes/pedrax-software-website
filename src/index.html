@@ -10,6 +10,7 @@
     <script src="./scripts/hero.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="./scripts/download_request.js" defer></script>
     <script>
       $(function () {
         $('#footer').load('footer.html');
@@ -206,6 +207,7 @@
       </section>
     </main>
     <div id="footer"></div>
+    <!--div to darken the page if popup is visible -->
     <div
       id="darken"
       class="fixed top-0 left-0 z-10 hidden h-full w-full bg-black/50 opacity-0 transition duration-500 ease-in-out"
@@ -300,7 +302,7 @@
             <button
               id="submit_email"
               type="submit"
-              class="inline-flex items-center rounded-lg bg-blue-700 py-2.5 px-5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 focus:outline-none"
+              class="inline-flex items-center rounded-lg bg-sky-500 py-2.5 px-5 text-center text-sm font-medium text-white focus:ring-4 focus:ring-sky-300 focus:outline-none"
             >
               Testversion anfordern
             </button>

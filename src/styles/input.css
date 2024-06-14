@@ -21,8 +21,23 @@
     Define default site margins and paddings
   */
   --padding-site: 2.5rem;
-  --padding-sitemd: 7rem;
+  --padding-sitemd: 5rem;
 
   --margin-site: 2.5rem;
-  --margin-sitemd: 7rem;
+  --margin-sitemd: 5rem;
+}
+
+@layer base {
+  h1 {
+    @apply mt-8 mb-4 text-4xl font-bold;
+  }
+  h2 {
+    @apply mt-6 mb-3 text-3xl font-semibold;
+  }
+  h3 {
+    @apply mt-5 mb-2 text-xl font-medium;
+  }
+  h4 {
+    @apply mt-3 mb-1 text-lg font-medium;
+  }
 }

@@ -34,7 +34,7 @@ emailForm.addEventListener('submit', (event) => {
         submitEmail.innerHTML = 'Setup angefragt!';
         submitEmail.classList.remove('bg-sky-500');
         submitEmail.classList.add('bg-green-500');
-        submitEmail.classList.remove('hover:bg-blue-800');
+        submitEmail.classList.remove('hover:bg-sky-800');
         submitEmail.classList.remove('focus:ring-sky-300');
         sendEmail = true;
       }

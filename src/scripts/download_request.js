@@ -1,20 +1,36 @@
 const moreInfo = document.getElementById('moreInfo');
-let sendEmail = false;
+const closePopup = document.getElementById('close_popup');
+let alreadySubmitted = false;
 
 moreInfo.addEventListener('click', () => {
+  /*
+   * Function to display the user popup
+   */
   const popup = document.getElementById('user_popup');
-  popup.classList.remove('hidden');
+  const darkenPanel = document.getElementById('darken');
 
-  document.getElementById('darken').classList.remove('hidden');
-  document.getElementById('darken').classList.remove('opacity-0');
-  document.getElementById('darken').classList.add('opacity-100');
+  popup.classList.remove('hidden');
+  darkenPanel.classList.replace('invisible', 'visible');
+  darkenPanel.classList.replace('opacity-0', 'opacity-100');
+});
+
+closePopup.addEventListener('click', () => {
+  /*
+   * Function to close the user popup
+   */
+  const popup = document.getElementById('user_popup');
+  const darkenPanel = document.getElementById('darken');
+
+  popup.classList.add('hidden');
+  darkenPanel.classList.replace('opacity-100', 'opacity-0');
+  darkenPanel.classList.replace('visible', 'invisible');
 });
 
 const emailForm = document.getElementById('emailForm');
 
 emailForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  if (sendEmail) {
+  if (alreadySubmitted) {
     return;
   }
   // Bind the subscription form and execute AJAX request
@@ -24,19 +40,37 @@ emailForm.addEventListener('submit', (event) => {
   })
     .then((response) => response.text())
     .then((data) => {
-      // Output the response
-      const submitEmail = document.getElementById('submit_email');
+      // Get the submit button object to change its appearance
+      const submitEmailButton = document.getElementById('submit_email');
+
+      // Remove all hover effects of button
+      for (let i = 0; i < submitEmailButton.classList.length; i += 1) {
+        if (submitEmailButton.classList[i].includes('hover:')) {
+          submitEmailButton.classList.remove(submitEmailButton.classList[i]);
+        }
+      }
+
+      // Remove button background color
+      for (let i = 0; i < submitEmailButton.classList.length; i += 1) {
+        if (submitEmailButton.classList[i].includes('bg-')) {
+          submitEmailButton.classList.remove(submitEmailButton.classList[i]);
+        }
+      }
+
+      // Remove focus effect and set cursor to default
+      submitEmailButton.classList.remove('focus:ring-sky-300');
+      submitEmailButton.classList.add('hover:cursor-default');
+
       if (data.includes('Fehler')) {
         // Display error message
-        submitEmail.classList.add('bg-red-500');
-        submitEmail.innerHTML = 'Fehler!';
+        submitEmailButton.classList.add('bg-red-500');
+        submitEmailButton.innerHTML = 'Fehler!';
+        alreadySubmitted = true;
       } else {
-        submitEmail.innerHTML = 'Setup angefragt!';
-        submitEmail.classList.remove('bg-sky-500');
-        submitEmail.classList.add('bg-green-500');
-        submitEmail.classList.remove('hover:bg-sky-800');
-        submitEmail.classList.remove('focus:ring-sky-300');
-        sendEmail = true;
+        // Display success message
+        submitEmailButton.classList.add('bg-success');
+        submitEmailButton.innerHTML = 'Anfrage erfolgreich!';
+        alreadySubmitted = true;
       }
     });
 });

@@ -235,15 +235,17 @@
     <!--div to darken the page if popup is visible -->
     <div
       id="darken"
-      class="fixed top-0 left-0 z-10 hidden h-full w-full bg-black/50 opacity-0 transition duration-500 ease-in-out"
+      class="invisible fixed top-0 left-0 z-60 h-full w-full bg-black/40 opacity-0 transition-all duration-500 ease-in-out"
     ></div>
     <div
       id="user_popup"
       tabindex="-1"
       aria-hidden="false"
-      class="fixed top-0 right-0 left-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-x-hidden overflow-y-auto md:inset-0"
+      class="fixed top-0 right-0 left-0 z-70 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-x-hidden overflow-y-auto md:inset-0"
     >
-      <div class="relative max-h-full w-full max-w-md p-4">
+      <div
+        class="relative mx-auto max-h-full w-full max-w-[35rem] p-5 md:mt-[22vh] md:ml-[20vw]"
+      >
         <!-- Modal content -->
         <div class="relative rounded-lg border-gray-600 bg-white shadow-2xl">
           <!-- Modal header -->
@@ -280,11 +282,19 @@
             <!-- Modal body -->
           </div>
           <div class="p-4 text-gray-900 md:p-5">
-            Tragen Sie hier ihre E-Mail und optional den Namen ein, darauf
-            senden wir Ihnen den Lizenscode inderhalb eines Tages zu.
+            Tragen Sie hier Ihre E-Mail-Adresse und optional Ihren Namen ein.
+            <br />
+            Daraufhin senden wir Ihnen den Lizenzcode und einen Download-Link
+            innerhalb eines Tages zu. <br />
+            <a
+              class="text-sm underline"
+              target="”_blank”"
+              href="pages/datenschutz.html"
+              >Datenschutzerklärung</a
+            >
           </div>
           <form class="p-4 md:p-5" id="emailForm" action="php/submit_email.php">
-            <div class="mb-4 grid grid-cols-2 gap-4">
+            <div class="mb-8 grid grid-cols-2 gap-4">
               <div class="col-span-2">
                 <label
                   for="email"
@@ -327,24 +337,13 @@
             <button
               id="submit_email"
               type="submit"
-              class="inline-flex items-center rounded-lg bg-sky-500 py-2.5 px-5 text-center text-sm font-medium text-white hover:bg-sky-800 focus:ring-4 focus:ring-sky-300 focus:outline-none"
+              class="bg-info/90 hover:bg-info inline-flex items-center rounded-lg py-3 px-5 text-center text-sm font-medium text-white transition-transform hover:scale-105 hover:cursor-pointer focus:ring-4 focus:ring-sky-300 focus:outline-none"
             >
-              Testversion anfordern
+              Anfrage senden
             </button>
           </form>
         </div>
       </div>
-      <script>
-        document.getElementById('close_popup').addEventListener('click', () => {
-          // document.getElementById('darken').classList.add('hidden');
-          document.getElementById('darken').classList.remove('opacity-100');
-          document.getElementById('darken').classList.add('opacity-0');
-          setTimeout(() => {
-            document.getElementById('darken').classList.add('hidden');
-          }, 500);
-          document.getElementById('user_popup').classList.add('hidden');
-        });
-      </script>
     </div>
   </body>
 </html>

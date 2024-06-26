@@ -254,28 +254,38 @@
           </p>
         </div>
       </section>
+
+      <div id="das-sind-wir" class="relative top-4"></div>
+
       <!--Cards Section-->
       <section class="my-28" id="cards">
         <div class="mb-8 text-center text-3xl font-light lg:mb-16 lg:text-4xl">
           DAS SIND WIR
         </div>
         <div class="flex flex-wrap items-center justify-center gap-10">
-          <div class="max-w-md overflow-hidden rounded-xl bg-white shadow-lg">
+          <div
+            class="max-w-[29rem] overflow-hidden rounded-xl bg-white shadow-xl"
+          >
             <img
-              class="h-96 w-full object-cover object-top"
+              class="h-[25rem] w-full object-cover object-top"
               src="./assets/Samuel.jpg"
               alt="Bild von Samuel Heid"
             />
-            <div class="py-4 px-6">
+            <div class="pt-4 px-6">
               <div class="mb-2 text-xl font-bold">Samuel Heid</div>
               <p class="text-base text-gray-700">
-                Hallo, ich bin Student an der Universität Tübingen und habe mit
-                meinem Freund zusammen das Projekt Liedplan Creator entwickelt.
-                <br /><br /><br /><br />
-                Lorem ipsum...<br /><br />
+                Hallo, ich bin Student an der Universität Tübingen im
+                Studiengang Informatik und studiere mittlerweile im fünften
+                Semester.
+                <br /><br />
+                PeDrax Software ist für mich die Schnittstelle, um die gelernte
+                Theorie in die Praxis umzusetzen. Bei der Entwicklung von
+                Software stehen für mich schnelle Fortschritte und zielführende
+                Ergebnisse an erster Stelle.
+                <br />
               </p>
             </div>
-            <div class="bg pt-4 px-6 pb-2">
+            <div class="pt-5 px-6 pb-2">
               <span
                 class="mr-2 mb-2 inline-block rounded-full bg-gray-200 py-1 px-3 text-sm font-semibold text-gray-700"
                 >Student</span
@@ -287,14 +297,14 @@
             </div>
           </div>
           <div
-            class="max-w-[27rem] overflow-hidden rounded-xl bg-white shadow-lg"
+            class="max-w-[29rem] overflow-hidden rounded-xl bg-white shadow-lg"
           >
             <img
-              class="h-96 w-full object-cover object-center"
+              class="h-[25rem] w-full object-cover object-center"
               src="./assets/Sven.jpg"
               alt="Bild von Sven Reepschläger"
             />
-            <div class="py-4 px-6">
+            <div class="pt-4 px-6">
               <div class="mb-2 text-xl font-bold">Sven Reepschläger</div>
               <p class="text-base text-gray-700">
                 Hallo, ich bin Student an der Universität Ulm, bin aber auch oft
@@ -309,11 +319,11 @@
                 <br />
                 <br />
                 Schon seit langem begleitet mich eine große Leidenschaft für
-                Softwareentwicklung und Videoproduktion. Dabei ist mir eine
-                genaue und saubere Arbeitsweise sehr wichtig.
+                Softwareentwicklung, Videoproduktion und Musik. Dabei lege ich
+                großen Wert auf eine genaue Arbeitsweise und hohe Qualität.
               </p>
             </div>
-            <div class="pt-4 px-6 pb-2">
+            <div class="pt-5 px-6 pb-2">
               <span
                 class="mr-2 mb-2 inline-block rounded-full bg-gray-200 py-1 px-3 text-sm font-semibold text-gray-700"
                 >Student</span
@@ -392,7 +402,7 @@
             <a
               class="text-sm underline"
               target="”_blank”"
-              href="pages/datenschutz.html"
+              href="datenschutz.html"
               >Datenschutzerklärung</a
             >
           </div>
@@ -400,13 +410,15 @@
             <div class="mb-8 grid grid-cols-2 gap-4">
               <div class="col-span-2">
                 <label
-                  for="email"
+                  for="dr-email"
                   class="mb-2 block text-sm font-medium text-gray-900"
                   >E-Mail *</label
                 >
                 <input
                   type="email"
                   name="email"
+                  id="dr-email"
+                  autocomplete="email"
                   class="focus:ring-primary-600 focus:border-primary-600 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
                   placeholder="Geben Sie Ihre E-Mail-Adresse ein"
                   required
@@ -414,25 +426,29 @@
               </div>
               <div class="col-span-2 sm:col-span-1">
                 <label
-                  for="vorname"
+                  for="dr-vorname"
                   class="mb-2 block text-sm font-medium text-gray-900"
                   >Vorname</label
                 >
                 <input
                   type="text"
                   name="vorname"
+                  id="dr-vorname"
+                  autocomplete="given-name"
                   class="focus:ring-primary-600 focus:border-primary-600 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
                 />
               </div>
               <div class="col-span-2 sm:col-span-1">
                 <label
-                  for="nachname"
+                  for="dr-nachname"
                   class="mb-2 block text-sm font-medium text-gray-900"
                   >Nachname</label
                 >
                 <input
                   type="text"
                   name="nachname"
+                  id="dr-nachname"
+                  autocomplete="family-name"
                   class="focus:ring-primary-600 focus:border-primary-600 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
                 />
               </div>

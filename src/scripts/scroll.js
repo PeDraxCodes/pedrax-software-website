@@ -13,7 +13,7 @@ window.addEventListener('scroll', () => {
     header.classList.add('md:bg-zinc-900');
     header.classList.add('backdrop-blur-lg');
     header.classList.add('bg-black/10');
-    navLogo.classList.replace('text-green-700', 'text-white'); // text color of nav logo
+    navLogo.classList.add('md:text-white'); // text color of nav logo
     navItemsDesktop.classList.replace('text-zinc-900', 'text-white'); // text color of nav text items
     navContactButton.classList.replace('text-zinc-900', 'text-white');
     pageScrollButton.classList.replace('opacity-100', 'opacity-0');
@@ -23,7 +23,7 @@ window.addEventListener('scroll', () => {
     header.classList.add('bg-transparent');
     header.classList.remove('backdrop-blur-lg');
     header.classList.remove('bg-black/10');
-    navLogo.classList.replace('text-white', 'text-green-700'); // text color of nav logo
+    navLogo.classList.remove('md:text-white'); // text color of nav logo
     navItemsDesktop.classList.replace('text-white', 'text-zinc-900');
     navContactButton.classList.replace('text-white', 'text-zinc-900');
     pageScrollButton.classList.replace('invisible', 'visible');

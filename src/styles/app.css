@@ -1356,6 +1356,12 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
   }
+  .duration-100 {
+    transition-duration: 100ms;
+  }
+  .duration-200 {
+    transition-duration: 200ms;
+  }
   .duration-300 {
     transition-duration: 300ms;
   }
@@ -1679,6 +1685,11 @@
   .md\:font-normal {
     @media (width >= 48rem) {
       font-weight: 400;
+    }
+  }
+  .md\:text-white {
+    @media (width >= 48rem) {
+      color: var(--color-white, #fff);
     }
   }
   .md\:hover\:scale-\[42\%\] {

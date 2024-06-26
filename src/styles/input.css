@@ -18,6 +18,12 @@
   --color-bg: #fefced;
 
   /*
+    Define custom font sizes
+  */
+  --font-size-lxl: 1.35rem;
+  --font-size-lxl--line-height: 1.8rem;
+
+  /*
     Define default site margins and paddings
   */
   --padding-site: 2.5rem;

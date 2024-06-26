@@ -31,6 +31,55 @@
 
   --margin-site: 2.5rem;
   --margin-sitemd: 5rem;
+
+  /*
+    Define custom animations
+  */
+  --animate-fadein: fadeIn 1s ease-in-out;
+  --animate-fadein-slow: fadeIn 1.4s ease-in-out;
+  --animate-fadein-fast: fadeIn 0.4s ease-in-out;
+  --animate-fadeout: fadeOut 1s ease-in-out;
+  --animate-blink: blink 1s infinite;
+  --animate-reveal: reveal 2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes reveal {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @layer base {

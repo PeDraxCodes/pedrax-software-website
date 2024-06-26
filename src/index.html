@@ -126,42 +126,69 @@
       </div>
 
       <!--Hero Section-->
-      <section class="grid gap-10 md:grid-cols-2 md:grid-rows-2">
-        <div class="md:col-span-1">
-          <h1 class="pt-16 font-serif text-5xl font-bold md:text-7xl">
-            Liedplan Creator
-          </h1>
-          <h1 class="pt-10 font-serif text-2xl font-semibold md:text-3xl">
-            Software für Kirchenmusiker
-          </h1>
-        </div>
-        <div class="relative mt-5 md:col-start-2 md:row-span-2 md:row-start-1">
-          <img
-            src="./assets/formular.png"
-            alt=""
-            class="mt-3 rounded-b-2xl shadow-2xl md:max-h-[80%] md:max-w-[90%]"
-          />
-          <img
-            src="./assets/liedplan-produkt.jpg"
-            class="absolute -top-5 left-5 origin-top-right scale-50 rounded-3xl shadow-2xl shadow-green-700"
-          />
-        </div>
-        <div class="flex flex-col items-center md:items-start">
-          <div
-            class="pt-10 text-center text-xl font-semibold md:row-start-2 md:text-left md:text-xl"
-          >
-            Erstellen Sie im Handumdrehen Liedpläne für katholische
-            Gottesdienste!
-          </div>
-          <button
-            id="moreInfo"
-            class="bg-success mt-5 rounded-full py-2 px-4 font-bold text-white hover:cursor-pointer hover:border-2 hover:border-black hover:bg-white hover:text-black"
-          >
-            mehr Informationen
-          </button>
-        </div>
-      </section>
       <!--PeDrax Info section-->
+      <div
+        class="my-20 flex items-start justify-center md:my-0 md:h-[95vh] md:items-center"
+      >
+        <section
+          class="grid w-[90vw] gap-20 md:grid-cols-2 md:grid-rows-2 md:gap-10"
+        >
+          <div class="animate-fadein-fast content-center md:col-span-1">
+            <p class="mb-4 hidden font-mono text-lg text-green-800 2xl:block">
+              kostenlose Betaversion verfügbar bis zum 31.08.2024!
+            </p>
+            <div class="font-serif text-5xl font-bold md:text-7xl">
+              Liedplan Creator
+              <!-- &#8482; -->
+            </div>
+            <div class="pt-8 font-serif text-2xl font-semibold md:text-3xl">
+              Software für Kirchenmusiker
+            </div>
+          </div>
+          <div
+            class="relative animate-none md:col-start-2 md:row-span-2 md:row-start-1 md:ml-16"
+          >
+            <img
+              src="./assets/formular.png"
+              alt=""
+              class="animate-none rounded-b-2xl shadow-2xl transition-transform duration-800 hover:scale-105 md:max-h-[80%] md:max-w-[100%]"
+            />
+            <img
+              src="./assets/liedplan-produkt.jpg"
+              class="absolute -top-5 left-5 origin-top-right scale-50 rounded-3xl shadow-2xl shadow-green-700 transition-transform duration-800 hover:scale-[55%] md:left-[7vw] md:origin-center md:scale-[40%] md:hover:scale-[42%]"
+            />
+          </div>
+          <div class="flex flex-col items-center md:-mt-2 md:items-start">
+            <div
+              class="text-center text-xl font-medium md:row-start-2 md:text-left md:text-xl md:font-normal"
+            >
+              Erstellen Sie im Handumdrehen Liedpläne für katholische
+              Gottesdienste! <br />
+              <span class="my-4 block font-normal md:my-0"
+                ><span class="">Funktionen:</span>
+                <a
+                  class="text-success font-serif italic"
+                  href="liedplancreator/beispiel-liedplan.pdf"
+                  target="_blank"
+                  >umfangreicher PDF-Export</a
+                >, Datenbank, Gotteslob-Liederverzeichnis, uvm...</span
+              >
+            </div>
+            <a
+              id="moreInfo"
+              class="bg-success mt-7 inline-flex items-center rounded-full py-2.5 px-5 font-semibold text-white hover:cursor-pointer hover:border-2 hover:border-black hover:bg-white hover:text-black"
+            >
+              <svg
+                class="mr-2 h-4 w-4 fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+              </svg>
+              <span>Testversion anfordern (Windows)</span>
+            </a>
+          </div>
+        </section>
       <section
         class="-mx-site px-site my-20 bg-[#ebe9dd] py-20"
       >

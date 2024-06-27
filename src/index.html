@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,37 +10,59 @@
     <script src="./scripts/hero.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="./scripts/download_request.js" defer></script>
     <script>
       $(function () {
         $('#footer').load('footer.html');
       });
     </script>
   </head>
+
   <body class="bg-bg">
     <!--Background-->
-    <svg class="absolute" style="width: 100%; height: 100%">
+    <svg class="absolute" style="width: 100%; height: 150%">
       <line
         x1="0"
-        y1="90%"
+        y1="95%"
         x2="90%"
         y2="0"
-        style="stroke: rgb(44, 44, 44); stroke-width: 1"
+        style="stroke: rgb(69, 69, 69); stroke-width: 1"
       />
     </svg>
     <!--Navbar-->
     <header
-      id="colorDiv"
-      class="container md:backdrop-blur-none fixed z-50 mx-auto w-full bg-transparent px-10 transition duration-300 ease-in-out"
+      id="header"
+      class="container md:backdrop-blur-none fixed z-50 mx-auto w-full bg-transparent px-10 transition duration-300 ease-in"
     >
       <div class="flex h-16 items-center justify-between">
-        <h1 class="font-mono text-xl text-green-700">PeDrax Software</h1>
-        <!--Menu Items-->
-        <nav class="hidden gap-10 space-x-6 md:flex" id="navColor">
-          <a href="#">Über uns</a>
-          <a href="#">Produkte</a>
-          <a href="#">Kontakt</a>
+        <div class="flex-[1]">
+          <div
+            id="navLogo"
+            class="animate-fadein flex w-fit font-mono text-xl text-green-700"
+          >
+            <div class="animate-reveal overflow-hidden text-nowrap">
+              PeDrax Software
+            </div>
+            <div class="animate-blink relative -top-0.5">_</div>
+          </div>
+        </div>
+        <!--Desktop Menu-->
+        <nav
+          class="center hidden flex-[1] justify-center space-x-20 text-zinc-900 md:flex"
+          id="navItemsDesktop"
+        >
+          <a href="#pedrax-info">Über uns</a>
+          <a href="">Produkte</a>
+          <a href="https://www.youtube.com/@pedraxfilms" target="_blank"
+            >PeDrax Films</a
+          >
         </nav>
-        <div class="hidden md:flex">Anfragen</div>
+        <a
+          id="navContact"
+          class="hidden flex-[1] justify-end text-zinc-900 md:flex"
+          href="mailto:info@pedrax-software.de"
+          >Kontakt</a
+        >
         <!--Mobile Menu Button-->
         <button
           class="pointer relative block h-6 w-6 cursor-pointer overflow-hidden focus:outline-none md:hidden"
@@ -64,105 +86,206 @@
       <div class="md:hidden">
         <div
           id="menu"
-          class="absolute right-5 left-5 mt-4 flex flex-col items-end space-y-6 self-end border-r-7 border-green-800 bg-black/50 py-4 px-5 font-mono text-lg text-neutral-200 opacity-0 shadow-lg backdrop-blur-sm transition-opacity ease-in"
+          class="invisible absolute right-5 left-5 mt-4 flex flex-col items-end space-y-6 self-end rounded-2xl border-r-7 border-green-800 bg-black/80 py-5 px-5 font-mono text-lg text-neutral-200 opacity-0 shadow-lg backdrop-blur-sm transition-all duration-100 ease-in"
         >
-          <a href="#">über uns <<</a>
-          <a href="#">produkte <<</a>
-          <a href="#">kontakt <<</a>
+          <a href="#pedrax-info">über uns <<</a>
+          <a href="">produkte <<</a>
+          <a href="https://www.youtube.com/@pedraxfilms" target="_blank"
+            >pedraxfilms <<</a
+          >
         </div>
       </div>
     </header>
     <!--Main Content-->
-    <main class="container px-site md:pt-sitemd relative items-center pt-10">
+    <main
+      class="container animate-fadein px-site md:px-sitemd relative items-center pt-10 md:pt-28"
+    >
+      <!--Banner at the top of the site-->
+      <div class="-mb-10 hidden pt-4 text-center lg:px-4">
+        <div
+          class="bg-success flex animate-bounce items-center rounded-full p-2 leading-none text-indigo-100 lg:inline-flex"
+          role="alert"
+        >
+          <span
+            class="mr-3 flex rounded-full bg-green-950 py-1 px-2 text-xs font-bold uppercase"
+            >Neu</span
+          >
+          <span class="mr-2 flex-auto text-left font-semibold"
+            >Jetzt eine kostenlose Testversion anfordern!</span
+          >
+          <svg
+            class="h-4 w-4 fill-current opacity-75"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"
+            />
+          </svg>
+        </div>
+      </div>
+
       <!--Hero Section-->
-      <section class="grid gap-10 md:grid-cols-2 md:grid-rows-2">
-        <div class="md:col-span-1">
-          <h1 class="pt-16 font-serif text-5xl font-bold md:text-7xl">
-            Liedplan Creator
-          </h1>
-          <h1 class="pt-10 font-serif text-2xl font-semibold md:text-3xl">
-            Software für Kirchenmusiker
-          </h1>
-        </div>
-        <div class="relative mt-5 md:col-start-2 md:row-span-2 md:row-start-1">
-          <img
-            src="./assets/formular.png"
-            alt=""
-            class="mt-3 rounded-b-2xl shadow-2xl md:max-h-[80%] md:max-w-[90%]"
-          />
-          <img
-            src="./assets/liedplan-produkt.jpg"
-            class="absolute -top-5 left-5 origin-top-right scale-50 rounded-3xl shadow-2xl shadow-green-700"
-          />
-        </div>
-        <div class="flex flex-col items-center md:items-start">
-          <div
-            class="pt-10 text-center text-xl font-semibold md:row-start-2 md:text-left md:text-xl"
-          >
-            Erstellen Sie im Handumdrehen Liedpläne für katholische
-            Gottesdienste!
+      <div
+        class="my-20 flex items-start justify-center md:my-0 md:h-[95vh] md:items-center"
+      >
+        <section
+          class="grid w-[90vw] gap-20 md:grid-cols-2 md:grid-rows-2 md:gap-10"
+        >
+          <div class="animate-fadein-fast content-center md:col-span-1">
+            <p class="mb-4 hidden font-mono text-lg text-green-800 2xl:block">
+              kostenlose Betaversion verfügbar bis zum 31.08.2024!
+            </p>
+            <div class="font-serif text-5xl font-bold md:text-7xl">
+              Liedplan Creator
+              <!-- &#8482; -->
+            </div>
+            <div class="pt-8 font-serif text-2xl font-semibold md:text-3xl">
+              Software für Kirchenmusiker
+            </div>
           </div>
-          <button
-            id="moreInfo"
-            class="bg-success mt-5 rounded-full py-2 px-4 font-bold text-white hover:cursor-pointer hover:border-2 hover:border-black hover:bg-white hover:text-black"
+          <div
+            class="relative animate-none md:col-start-2 md:row-span-2 md:row-start-1 md:ml-16"
           >
-            mehr Informationen
-          </button>
+            <img
+              src="./assets/formular.png"
+              alt=""
+              class="animate-none rounded-b-2xl shadow-2xl transition-transform duration-800 hover:scale-105 md:max-h-[80%] md:max-w-[100%]"
+            />
+            <img
+              src="./assets/liedplan-produkt.jpg"
+              class="absolute -top-5 left-5 origin-top-right scale-50 rounded-3xl shadow-2xl shadow-green-700 transition-transform duration-800 hover:scale-[55%] md:left-[7vw] md:origin-center md:scale-[40%] md:hover:scale-[42%]"
+            />
+          </div>
+          <div class="flex flex-col items-center md:-mt-2 md:items-start">
+            <div
+              class="text-center text-xl font-medium md:row-start-2 md:text-left md:text-xl md:font-normal"
+            >
+              Erstellen Sie im Handumdrehen Liedpläne für katholische
+              Gottesdienste! <br />
+              <span class="my-4 block font-normal md:my-0"
+                ><span class="">Funktionen:</span>
+                <a
+                  class="text-success font-serif italic"
+                  href="liedplancreator/beispiel-liedplan.pdf"
+                  target="_blank"
+                  >umfangreicher PDF-Export</a
+                >, Datenbank, Gotteslob-Liederverzeichnis, uvm...</span
+              >
+            </div>
+            <a
+              id="moreInfo"
+              class="bg-success mt-7 inline-flex items-center rounded-full py-2.5 px-5 font-semibold text-white hover:cursor-pointer hover:border-2 hover:border-black hover:bg-white hover:text-black"
+            >
+              <svg
+                class="mr-2 h-4 w-4 fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+              </svg>
+              <span>Testversion anfordern (Windows)</span>
+            </a>
+          </div>
+        </section>
+        <!--Arrow element to get to next section-->
+        <div
+          id="pageScrollButton"
+          class="visible fixed bottom-5 z-50 hidden animate-bounce opacity-100 transition-all duration-300 md:block"
+        >
+          <a href="#pedrax-info">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-10 w-10 rounded-full bg-stone-400 p-1 text-stone-100"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </a>
         </div>
-      </section>
-      <!--PeDrax Info section-->
+      </div>
+
+      <div id="pedrax-info" class="relative -top-56"></div>
+
+      <!--PeDrax Info Section-->
       <section
-        class="-mx-site px-site my-20 bg-[#ebe9dd] py-20"
+        class="-mx-site md:-mx-sitemd px-site bg-[#f0eee4]/90 pt-20 pb-24 drop-shadow-2xl md:pt-24 md:pb-28"
       >
         <div class="md:mx-auto md:w-[700px] md:max-w-fit">
-          <h1 class="mb-4 text-2xl font-bold lg:-mx-28 lg:mb-8 lg:text-4xl">
-            Das ist PeDrax Software
-          </h1>
+          <div class="mb-6 text-2xl md:font-mono lg:mb-8 lg:-ml-28 lg:text-3xl">
+            Das ist PeDrax Software<span
+              class="relative -top-1 left-0.5"
+            ></span>
+          </div>
 
-          <p class="text-lg font-semibold md:text-2xl">
+          <p class="md:text-lxl text-lg font-light">
             Wir sind zwei Informatikstudenten mit einer
-            <span class="text-justify font-bold text-green-700"
+            <span class="font-serif italic text-green-700 md:text-xl"
               >Leidenschaft</span
             >
             für Softwareentwicklung und haben unser eigenes Unternehmen für
             Software-Dienstleistungen gegründet. Unsere erste Software ist
             bereits im Einsatz, und wir arbeiten
-            <span class="font-bold text-green-700">kontinuierlich</span> an
-            ihrer Weiterentwicklung und Optimierung.
+            <span class="font-serif italic text-green-700 md:text-xl"
+              >kontinuierlich</span
+            >
+            an ihrer Weiterentwicklung und Optimierung.
           </p>
-          <p class="mt-4 text-lg font-semibold md:text-2xl">
+          <p class="md:text-lxl mt-4 text-lg font-light">
             Unser Ziel ist es, benutzerfreundliche und effiziente Lösungen zu
             schaffen, die den Alltag unserer Nutzer
-            <span class="font-bold text-green-700"> erleichtern.</span> Mit
-            frischen Ideen und einem hohen Maß an Engagement bringen wir jedes
-            <span class="font-bold text-green-700">Projekt</span>
+            <span class="font-serif italic text-green-700 md:text-xl">
+              erleichtern.</span
+            >
+            Mit frischen Ideen und einem hohen Maß an Engagement bringen wir
+            jedes
+            <span class="font-serif italic text-green-700 md:text-xl"
+              >Projekt</span
+            >
             voran. Lassen Sie uns gemeinsam Ihre digitale Zukunft gestalten –
             mit maßgeschneiderter Software, die begeistert.
           </p>
         </div>
       </section>
+
+      <div id="das-sind-wir" class="relative top-4"></div>
+
       <!--Cards Section-->
-      <section class="my-20">
-        <h1
-          class="mb-10 text-center text-3xl font-bold lg:mb-20 lg:text-4xl"
-        >
+      <section class="my-28" id="cards">
+        <div class="mb-8 text-center font-serif text-3xl lg:mb-16 lg:text-4xl">
           Das sind wir
-        </h1>
+        </div>
         <div class="flex flex-wrap items-center justify-center gap-10">
-          <div class="max-w-sm overflow-hidden rounded-xl bg-white shadow-lg">
+          <div
+            class="max-w-[29rem] overflow-hidden rounded-xl bg-white shadow-xl"
+          >
             <img
-              class="h-64 w-full object-cover object-center"
-              src="./assets/Sam.jpg"
+              class="h-[25rem] w-full object-cover object-top"
+              src="./assets/Samuel.jpg"
               alt="Bild von Samuel Heid"
             />
-            <div class="py-4 px-6">
+            <div class="pt-4 px-6">
               <div class="mb-2 text-xl font-bold">Samuel Heid</div>
               <p class="text-base text-gray-700">
-                Hallo, ich bin Student an der Universität Tübingen und habe mit
-                meinem Freund zusammen das Projekt Liedplan Creator entwickelt.
+                Hallo, ich bin Student an der Universität Tübingen im
+                Studiengang Informatik und studiere mittlerweile im fünften
+                Semester.
+                <br /><br />
+                PeDrax Software ist für mich die Schnittstelle, um die gelernte
+                Theorie in die Praxis umzusetzen. Bei der Entwicklung von
+                Software stehen für mich schnelle Fortschritte und zielführende
+                Ergebnisse an erster Stelle.
+                <br />
               </p>
             </div>
-            <div class="bg pt-4 px-6 pb-2">
+            <div class="pt-5 px-6 pb-2">
               <span
                 class="mr-2 mb-2 inline-block rounded-full bg-gray-200 py-1 px-3 text-sm font-semibold text-gray-700"
                 >Student</span
@@ -173,21 +296,34 @@
               >
             </div>
           </div>
-          <div class="max-w-sm overflow-hidden rounded-xl bg-white shadow-lg">
+          <div
+            class="max-w-[29rem] overflow-hidden rounded-xl bg-white shadow-lg"
+          >
             <img
-              class="h-64 w-full object-cover object-center"
-              src="./assets/Sven.png"
+              class="h-[25rem] w-full object-cover object-center"
+              src="./assets/Sven.jpg"
               alt="Bild von Sven Reepschläger"
             />
-            <div class="py-4 px-6">
+            <div class="pt-4 px-6">
               <div class="mb-2 text-xl font-bold">Sven Reepschläger</div>
               <p class="text-base text-gray-700">
-                Hallo, ich bin Student an der Universität Ulm und habe mit
-                meinem Freund zusammen das Projekt Liedplan Creator entwickelt.
-                <br /><br />
+                Hallo, ich bin Student an der Universität Ulm, bin aber auch oft
+                als Musiker unterwegs im Raum Heidenheim und Dinkelsbühl als
+                Teil von
+                <a
+                  href="https://www.retro-quartett.de"
+                  target="_blank"
+                  class="font-serif text-blue-700 underline"
+                  >ReTro Quartett</a
+                >.
+                <br />
+                <br />
+                Schon seit langem begleitet mich eine große Leidenschaft für
+                Softwareentwicklung, Videoproduktion und Musik. Dabei lege ich
+                großen Wert auf eine genaue Arbeitsweise und hohe Qualität.
               </p>
             </div>
-            <div class="pt-4 px-6 pb-2">
+            <div class="pt-5 px-6 pb-2">
               <span
                 class="mr-2 mb-2 inline-block rounded-full bg-gray-200 py-1 px-3 text-sm font-semibold text-gray-700"
                 >Student</span
@@ -205,6 +341,128 @@
         </div>
       </section>
     </main>
-    <footer id="footer"></footer>
+    <div id="footer"></div>
+
+    <!--DOWNLOAD REQUEST MODAL-->
+    <!--div to darken the page if popup is visible -->
+    <div
+      id="darken"
+      class="invisible fixed top-0 left-0 z-60 h-full w-full bg-black/40 opacity-0 transition-all duration-500 ease-in-out"
+    ></div>
+    <div
+      id="user_popup"
+      tabindex="-1"
+      aria-hidden="false"
+      class="fixed top-0 right-0 left-0 z-70 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-x-hidden overflow-y-auto md:inset-0"
+    >
+      <div
+        class="relative mx-auto max-h-full w-full max-w-[35rem] p-5 md:mt-[22vh] md:ml-[20vw]"
+      >
+        <!-- Modal content -->
+        <div class="relative rounded-lg border-gray-600 bg-white shadow-2xl">
+          <!-- Modal header -->
+          <div
+            class="flex items-center justify-between rounded-t border-b border-gray-400 p-4 md:p-5"
+          >
+            <h3 class="text-lg font-semibold text-gray-900">
+              Liedplan Creator Testversion
+              <span class="font-normal italic">(kostenlos)</span>
+            </h3>
+
+            <button
+              type="button"
+              id="close_popup"
+              class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
+            >
+              <svg
+                class="h-3 w-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                />
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+
+            <!-- Modal body -->
+          </div>
+          <div class="p-4 text-gray-900 md:p-5">
+            Tragen Sie hier Ihre E-Mail-Adresse und optional Ihren Namen ein.
+            <br />
+            Daraufhin senden wir Ihnen den Lizenzschlüssel und einen
+            Download-Link innerhalb eines Tages zu. <br />
+            <a
+              class="text-sm underline"
+              target="”_blank”"
+              href="datenschutz.html"
+              >Datenschutzerklärung</a
+            >
+          </div>
+          <form class="p-4 md:p-5" id="emailForm" action="php/submit_email.php">
+            <div class="mb-8 grid grid-cols-2 gap-4">
+              <div class="col-span-2">
+                <label
+                  for="dr-email"
+                  class="mb-2 block text-sm font-medium text-gray-900"
+                  >E-Mail *</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  id="dr-email"
+                  autocomplete="email"
+                  class="focus:ring-primary-600 focus:border-primary-600 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
+                  placeholder="Geben Sie Ihre E-Mail-Adresse ein"
+                  required
+                />
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <label
+                  for="dr-vorname"
+                  class="mb-2 block text-sm font-medium text-gray-900"
+                  >Vorname</label
+                >
+                <input
+                  type="text"
+                  name="vorname"
+                  id="dr-vorname"
+                  autocomplete="given-name"
+                  class="focus:ring-primary-600 focus:border-primary-600 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
+                />
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <label
+                  for="dr-nachname"
+                  class="mb-2 block text-sm font-medium text-gray-900"
+                  >Nachname</label
+                >
+                <input
+                  type="text"
+                  name="nachname"
+                  id="dr-nachname"
+                  autocomplete="family-name"
+                  class="focus:ring-primary-600 focus:border-primary-600 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
+                />
+              </div>
+            </div>
+            <button
+              id="submit_email"
+              type="submit"
+              class="bg-info/90 hover:bg-info mb-2 inline-flex items-center rounded-lg py-3 px-5 text-center text-sm font-medium text-white transition-transform hover:scale-105 hover:cursor-pointer focus:ring-4 focus:ring-sky-300 focus:outline-none"
+            >
+              Anfrage senden
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

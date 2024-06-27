@@ -18,11 +18,81 @@
   --color-bg: #fefced;
 
   /*
+    Define custom font sizes
+  */
+  --font-size-lxl: 1.35rem;
+  --font-size-lxl--line-height: 1.8rem;
+
+  /*
     Define default site margins and paddings
   */
   --padding-site: 2.5rem;
-  --padding-sitemd: 7rem;
+  --padding-sitemd: 5rem;
 
   --margin-site: 2.5rem;
-  --margin-sitemd: 7rem;
+  --margin-sitemd: 5rem;
+
+  /*
+    Define custom animations
+  */
+  --animate-fadein: fadeIn 1s ease-in-out;
+  --animate-fadein-slow: fadeIn 1.4s ease-in-out;
+  --animate-fadein-fast: fadeIn 0.4s ease-in-out;
+  --animate-fadeout: fadeOut 1s ease-in-out;
+  --animate-blink: blink 1s infinite;
+  --animate-reveal: reveal 2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes reveal {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@layer base {
+  h1 {
+    @apply mt-8 mb-4 text-4xl font-bold;
+  }
+  h2 {
+    @apply mt-6 mb-3 text-3xl font-semibold;
+  }
+  h3 {
+    @apply mt-5 mb-2 text-xl font-medium;
+  }
+  h4 {
+    @apply mt-3 mb-1 text-lg font-medium;
+  }
 }

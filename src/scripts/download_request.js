@@ -1,8 +1,8 @@
-const moreInfo = document.getElementById('moreInfo');
+const downloadRequestButton = document.getElementById('downloadRequestButton');
 const closePopup = document.getElementById('close_popup');
 let alreadySubmitted = false;
 
-moreInfo.addEventListener('click', () => {
+downloadRequestButton.addEventListener('click', () => {
   /*
    * Function to display the user popup
    */

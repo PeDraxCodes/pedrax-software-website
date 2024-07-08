@@ -1,17 +1,17 @@
 /* eslint-disable no-undef */
 document.addEventListener('DOMContentLoaded', () => {
-  const moreInfoBtn = document.getElementById('moreInfo');
+  const downloadRequestBtn = document.getElementById('downloadRequestButton');
 
-  moreInfoBtn.addEventListener('mouseenter', () => {
-    gsap.to(moreInfoBtn, {
+  downloadRequestBtn.addEventListener('mouseenter', () => {
+    gsap.to(downloadRequestBtn, {
       duration: 0.5,
       scale: 1.1,
       ease: 'back.out',
     });
   });
 
-  moreInfoBtn.addEventListener('mouseleave', () => {
-    gsap.to(moreInfoBtn, {
+  downloadRequestBtn.addEventListener('mouseleave', () => {
+    gsap.to(downloadRequestBtn, {
       duration: 0.5,
       scale: 1,
       ease: 'back.out',

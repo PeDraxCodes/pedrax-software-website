@@ -9,7 +9,7 @@
     <script src="./scripts/buttons.js" defer></script>
     <script src="./scripts/hero.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="./scripts/download_request.js" defer></script>
     <script>
       $(function () {
@@ -86,7 +86,7 @@
       <div class="md:hidden">
         <div
           id="menu"
-          class="invisible absolute right-5 left-5 mt-4 flex flex-col items-end space-y-6 self-end rounded-2xl border-r-7 border-green-800 bg-black/80 py-5 px-5 font-mono text-lg text-neutral-200 opacity-0 shadow-lg backdrop-blur-sm transition-all duration-100 ease-in"
+          class="visible absolute right-5 left-5 mt-4 flex flex-col items-end space-y-8 self-end rounded-3xl border-r-7 border-green-800 bg-neutral-400/40 py-5 px-5 font-mono text-lg text-black opacity-0 opacity-100 shadow-lg backdrop-blur-sm transition-all duration-150 ease-in"
         >
           <a href="#pedrax-info">über uns <<</a>
           <a href="">produkte <<</a>
@@ -173,19 +173,31 @@
                 >, Datenbank, Gotteslob-Liederverzeichnis, uvm...</span
               >
             </div>
-            <a
-              id="moreInfo"
-              class="bg-success mt-7 inline-flex items-center rounded-full py-2.5 px-5 font-semibold text-white hover:cursor-pointer hover:border-2 hover:border-black hover:bg-white hover:text-black"
+            <div
+              class="mt-7 flex flex-col items-center justify-center space-y-5 md:flex-row md:space-y-0 md:space-x-5"
             >
-              <svg
-                class="mr-2 h-4 w-4 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
+              <a
+                id="downloadRequestButton"
+                class="bg-success inline-flex items-center rounded-full py-2.5 px-5 font-semibold text-white hover:cursor-pointer hover:border-2 hover:border-black hover:bg-white hover:text-black"
               >
-                <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-              </svg>
-              <span>Testversion anfordern (Windows)</span>
-            </a>
+                <svg
+                  class="mr-2 h-4 w-4 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                </svg>
+                <span>Testversion anfordern (Windows)</span>
+              </a>
+              <a
+                id="moreInfoButton"
+                class="bg-info hover:bg-info/90 inline-flex items-center rounded-full py-2.5 px-5 font-medium text-white hover:cursor-pointer"
+                href="liedplancreator/Einführung.pdf"
+                target="_blank"
+              >
+                <span>mehr Informationen</span>
+              </a>
+            </div>
           </div>
         </section>
         <!--Arrow element to get to next section-->
@@ -219,7 +231,9 @@
         class="-mx-site md:-mx-sitemd px-site bg-[#f0eee4]/90 pt-20 pb-24 drop-shadow-2xl md:pt-24 md:pb-28"
       >
         <div class="md:mx-auto md:w-[700px] md:max-w-fit">
-          <div class="mb-6 text-2xl md:font-mono lg:mb-8 lg:-ml-28 lg:text-3xl">
+          <div
+            class="mb-6 text-2xl md:font-serif lg:mb-8 lg:-ml-28 lg:text-3xl"
+          >
             Das ist PeDrax Software<span
               class="relative -top-1 left-0.5"
             ></span>
@@ -245,12 +259,11 @@
               erleichtern.</span
             >
             Mit frischen Ideen und einem hohen Maß an Engagement bringen wir
-            jedes
+            jedes Projekt voran. Lassen Sie uns gemeinsam Ihre digitale
             <span class="font-serif italic text-green-700 md:text-xl"
-              >Projekt</span
+              >Zukunft</span
             >
-            voran. Lassen Sie uns gemeinsam Ihre digitale Zukunft gestalten –
-            mit maßgeschneiderter Software, die begeistert.
+            gestalten – mit maßgeschneiderter Software, die begeistert.
           </p>
         </div>
       </section>
